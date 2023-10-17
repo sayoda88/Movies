@@ -1,0 +1,35 @@
+<form [formGroup]="registerForm" (ngSubmit)="getFormData(registerForm)" class="w-75 m-auto py-4 ">
+    
+    
+    <div class="form-group py-3">
+        <label class="py-2">FirstName: </label>
+        <input [class.is-invalid]='registerForm.get("first_name")?.invalid == true  && registerForm.get("first_name")?.touched == true'  formControlName="first_name" type="text" class="form-control">
+        <span *ngIf='registerForm.get("first_name")?.invalid == true  && registerForm.get("first_name")?.touched == true' class="bgFont d-block p-2 m-3 text-danger">firstName not Valid</span>
+    </div>
+
+    <div class="form-group py-3">
+        <label class="py-2" >LastName: </label>
+        <input [class.is-invalid]='registerForm.get("last_name")?.invalid == true  && registerForm.get("last_name")?.touched == true'  formControlName="last_name" type="text" class="form-control">
+        <span *ngIf='registerForm.get("last_name")?.invalid == true  && registerForm.get("last_name")?.touched == true' class="bgFont d-block p-2 m-3 text-danger">lastName not Valid</span>
+    </div>
+
+
+    <div class="form-group py-3">
+        <label class="py-2" >Age: </label>
+        <input [class.is-invalid]='registerForm.get("age")?.invalid == true  && registerForm.get("age")?.touched == true'  formControlName="age" type="text" class="form-control">
+        <span *ngIf='registerForm.get("age")?.invalid == true  && registerForm.get("age")?.touched == true' class="bgFont d-block p-2 m-3 text-danger">age not Valid</span>
+    </div>
+    <div class="form-group py-3">
+        <label class="py-2">E-mail: </label>
+        <input [class.is-invalid]='registerForm.get("email")?.invalid == true  && registerForm.get("email")?.touched == true'  formControlName="email" type="text" class="form-control">
+        <span *ngIf='registerForm.get("email")?.invalid == true  && registerForm.get("email")?.touched == true' class="bgFont d-block p-2 m-3 text-danger">email not Valid</span>
+    </div>
+
+    <div class="form-group py-3">
+        <label class="py-2">Password: </label>
+        <input [class.is-invalid]='registerForm.get("password")?.invalid == true  && registerForm.get("password")?.touched == true'  formControlName="password" type="text" class="form-control">
+        <span *ngIf='registerForm.get("password")?.invalid == true  && registerForm.get("password")?.touched == true' class="bgFont d-block p-1 m-1 text-danger">password not Valid</span>
+    </div>
+<button [disabled]="registerForm.invalid==true" type="submit" class="btn btn-mine">register</button>
+
+</form>
